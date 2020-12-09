@@ -20,14 +20,20 @@ background-size: cover;
 }
 
 .number-container {
-  /* width:600px; */
+ 
 }
 
 .number {
   width: 80px;
   height: 80px;
-  margin-left: 5px;
-  margin-top: 5px;
+  margin:20px;
   text-align: center;
   background-color: #de5046;
+  border: 2px solid #000;
+  font-size: 20px;
+}
+
+
+#quiz{
+  font-size: 40px;
 }
