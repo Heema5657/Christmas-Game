@@ -35,16 +35,7 @@ const number28 = document.getElementById("number28");
 const number29 = document.getElementById("number29");
 const number30 = document.getElementById("number30");
 const number31 = document.getElementById("number31");
-const number32 = document.getElementById("number32");
-const number33 = document.getElementById("number33");
-const number34 = document.getElementById("number34");
-const number35 = document.getElementById("number35");
-const number36 = document.getElementById("number36");
-const number37 = document.getElementById("number37");
-const number38 = document.getElementById("number38");
-const number39 = document.getElementById("number39");
-const number40 = document.getElementById("number40");
-const number41 = document.getElementById("number41");
+
 
 //events
 
