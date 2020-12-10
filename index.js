@@ -1,12 +1,18 @@
 // bring available
 const quizContainer = document.getElementById("quizContainer");
 const quiz = document.getElementById("quiz");
-const resultsContainer = document.getElementById("results");
+const answers = document.getElementById("answers");
+const answerA = document.getElementById("answerA");
+const answerB = document.getElementById("answerB");
+const answerC = document.getElementById("answerC");
+const results = document.getElementById("results");
 const numberContainer = document.getElementById("number-container");
+
+const Questions = [];
 
 // new code with For Loop
 // create Buttons days
-for (let i = 1; i < 31; i++) {
+for (let i = 1; i <= 31; i++) {
   let button = document.createElement("button");
   button.className = "number btn btn-danger";
   button.innerHTML = i;
@@ -20,10 +26,30 @@ for (let i = 1; i < 31; i++) {
       .then((res) => res.json())
       // .then((data) => console.log(data[randomNumber].question));
       .then((data) => {
-        const question = data[randomNumber].question;
+        Questions.push(data);
+        console.log(Questions);
+        const question = Questions[0][randomNumber].question;
         quiz.innerHTML = question;
-        console.log(question);
-        return quiz.appendChild(quiz);
+
+        const answer1 = Questions[0][randomNumber].answers.a;
+        const answer2 = Questions[0][randomNumber].answers.b;
+        const answer3 = Questions[0][randomNumber].answers.c;
+        let buttonA = document.createElement("button");
+        let buttonB = document.createElement("button");
+        let buttonC = document.createElement("button");
+  buttonA.className = " btn btn-secondary";
+  buttonB.className = " btn btn-secondary";
+  buttonC.className = " btn btn-secondary";
+
+
+        buttonA.innerHTML = answer1;
+        buttonB.innerHTML = answer2;
+        buttonC.innerHTML = answer3;
+
+        // quiz.appendChild(quiz);
+        answerA.appendChild(buttonA);
+        answerB.appendChild(buttonB);
+        answerC.appendChild(buttonC);
       });
   });
 }
@@ -119,11 +145,16 @@ buildRandomQuiz();
 // Step 1 Questions :
 
 // fetching questions from json :
+
 fetch("./questions.json")
   .then((res) => res.json())
-  .then((data) => console.log(data));
+  .then((data) => {
+    console.log(data);
 
-const Questions = [];
+    console.log(Questions);
+    // Questions.push(data);
+    console.log(Questions);
+  });
 
 // Step 2 create functions:
 function buildQuiz() {

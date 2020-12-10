@@ -16,33 +16,39 @@
     <title>Christmas Games</title>
   </head>
   <body>
-    <div class="content-page">
-      <header>
-        <div class="container text-center">
-          <h1>Christmas Game</h1>
-          <h4>How much do you know about Christmas ?</h4>
-          <h2 class="bg-secondary text-white">Just pick a Day</h2>
-        </div>
-      </header>
+    <div class="container">
+      <div class="content-page">
+        <header>
+          <div class="container text-center">
+            <h1>Christmas Game</h1>
+            <h4>How much do you know about Christmas ?</h4>
+            <h2 class="bg-secondary text-white">Just pick a Day</h2>
+          </div>
+        </header>
 
-      <!-- Days section -->
-      <section>
-        <div
-          id="number-container"
-          class="container fluid-container number-container d-flex flex-wrap justify-content-between"
-        ></div>
-      </section>
+        <!-- Days section -->
+        <section>
+          <div
+            id="number-container"
+            class="container fluid-container number-container d-flex flex-wrap justify-content-between"
+          ></div>
+        </section>
 
-      <!-- Questions section -->
+        <!-- Questions section -->
 
-      <section>
-        <div id="quizContainer"></div>
-        <div id="quiz" class="container text-center"></div>
-        <!-- <button id="submit">Submit Quiz</button> -->
-        <div id="results"></div>
-      </section>
+        <section>
+          <div id="quizContainer"></div>
+          <div id="quiz" class="container text-center"></div>
+          <div id="answers" class="container text-center">
+            <div id="answerA"></div>
+            <div id="answerB"></div>
+            <div id="answerC"></div>
+          </div>
+          <button id="submit">Submit Quiz</button>
+          <div id="results"></div>
+        </section>
+      </div>
     </div>
-
     <!-- Start bootstrap Script -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
