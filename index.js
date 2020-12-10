@@ -1,7 +1,6 @@
-// bring available
-const quizContainer = document.getElementById("quizContainer");
+// select these HTML elements
 const quiz = document.getElementById("quiz");
-const answers = document.getElementById("answers");
+const submit = document.getElementById("submit");
 const answerA = document.getElementById("answerA");
 const answerB = document.getElementById("answerB");
 const answerC = document.getElementById("answerC");
@@ -10,7 +9,6 @@ const numberContainer = document.getElementById("number-container");
 
 const Questions = [];
 
-// new code with For Loop
 // create Buttons days
 for (let i = 1; i <= 31; i++) {
   let button = document.createElement("button");
@@ -18,13 +16,17 @@ for (let i = 1; i <= 31; i++) {
   button.innerHTML = i;
   numberContainer.appendChild(button);
 
-  button.addEventListener("click", () => {
+  //create click handler
+  myClickFunction = () => {
+    //redirect to new Page
+    // window.location = "./answers.html";
+
     console.log("number" + i);
     const randomNumber = Math.round(Math.random() * 41);
     console.log(randomNumber);
+
     fetch("./questions.json")
       .then((res) => res.json())
-      // .then((data) => console.log(data[randomNumber].question));
       .then((data) => {
         Questions.push(data);
         console.log(Questions);
@@ -49,38 +51,13 @@ for (let i = 1; i <= 31; i++) {
         answerA.appendChild(buttonA);
         answerB.appendChild(buttonB);
         answerC.appendChild(buttonC);
+
+        let submitButton = document.createElement("submit");
+        submitButton.className = "btn btn-warning";
+        submitButton.innerText = "Submit";
+        submit.appendChild(submitButton);
       });
-  });
-}
+  };
 
-// fetching questions from json :
-
-function buildRandomQuiz() {}
-
-function showResults() {}
-
-// display quiz right away
-buildRandomQuiz();
-
-// on submit, show results
-// submitButton.addEventListener("click", showResults);
-
-// Step 1 Questions :
-
-// fetching questions from json :
-
-fetch("./questions.json")
-  .then((res) => res.json())
-  .then((data) => {
-    console.log(data);
-
-    console.log(Questions);
-    // Questions.push(data);
-    console.log(Questions);
-  });
-
-// Step 2 create functions:
-function buildQuiz() {
-  // variable to store the HTML output
-  const output = [];
+  button.addEventListener("click", myClickFunction);
 }
