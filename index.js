@@ -1,16 +1,12 @@
-// bring available
-const quizContainer = document.getElementById("quizContainer");
+// select these HTML elements
+const numberContainer = document.getElementById("number-container");
 const quiz = document.getElementById("quiz");
-const answers = document.getElementById("answers");
 const answerA = document.getElementById("answerA");
 const answerB = document.getElementById("answerB");
 const answerC = document.getElementById("answerC");
-const results = document.getElementById("results");
-const numberContainer = document.getElementById("number-container");
 
 const Questions = [];
 
-// new code with For Loop
 // create Buttons days
 for (let i = 1; i <= 31; i++) {
   let button = document.createElement("button");
@@ -18,69 +14,100 @@ for (let i = 1; i <= 31; i++) {
   button.innerHTML = i;
   numberContainer.appendChild(button);
 
-  button.addEventListener("click", () => {
+  // get today
+  const date = new Date();
+  const currentDate = date.getDate();
+  // console.log(currentDate)
+
+  if (currentDate !== i) {
+    button.setAttribute("disabled", true);
+  }
+
+  //create Results handler
+  showResults = () => {
+    document.getElementById("content-page").style.display = "none"; // to hide all the elements page
+
     console.log("number" + i);
     const randomNumber = Math.round(Math.random() * 41);
     console.log(randomNumber);
+
     fetch("./questions.json")
       .then((res) => res.json())
-      // .then((data) => console.log(data[randomNumber].question));
       .then((data) => {
+        Questions.splice(0, Questions.length); //remove all elements from the array and clean the original array.
         Questions.push(data);
         console.log(Questions);
         const question = Questions[0][randomNumber].question;
         quiz.innerHTML = question;
+        console.log(quiz);
 
         const answer1 = Questions[0][randomNumber].answers.a;
         const answer2 = Questions[0][randomNumber].answers.b;
         const answer3 = Questions[0][randomNumber].answers.c;
-        let buttonA = document.createElement("button");
-        let buttonB = document.createElement("button");
-        let buttonC = document.createElement("button");
-        buttonA.className = " btn btn-secondary";
-        buttonB.className = " btn btn-secondary";
-        buttonC.className = " btn btn-secondary";
 
-        buttonA.innerHTML = answer1;
-        buttonB.innerHTML = answer2;
-        buttonC.innerHTML = answer3;
+        const correctAnswer = Questions[0][randomNumber].correctAnswer;
+        console.log(correctAnswer);
 
-        // quiz.appendChild(quiz);
-        answerA.appendChild(buttonA);
-        answerB.appendChild(buttonB);
-        answerC.appendChild(buttonC);
+        answerA.innerHTML = answer1;
+        console.log(answerA);
+        answerB.innerHTML = answer2;
+        answerC.innerHTML = answer3;
+
+        answerA.addEventListener("click", () => {
+          if (answer1 == correctAnswer) {
+            alert("Your answer is correct");
+            answerA.className = "btn-success";
+            answerA.setAttribute("disabled", true);
+            answerB.setAttribute("disabled", true);
+            answerC.setAttribute("disabled", true);
+            // button.setAttribute("disabled", true);
+          } else {
+            answerA.className = "btn-danger";
+            answerA.setAttribute("disabled", true);
+            answerB.setAttribute("disabled", true);
+            answerC.setAttribute("disabled", true);
+            alert("Your answer is wrong");
+            // button.setAttribute("disabled", true);
+          }
+        });
+
+        answerB.addEventListener("click", () => {
+          if (answer2 == correctAnswer) {
+            alert("Your answer is correct");
+            answerB.className = "btn-success";
+            answerA.setAttribute("disabled", true);
+            answerB.setAttribute("disabled", true);
+            answerC.setAttribute("disabled", true);
+            // button.setAttribute("disabled", true);
+          } else {
+            answerB.className = "btn-danger";
+            answerA.setAttribute("disabled", true);
+            answerB.setAttribute("disabled", true);
+            answerC.setAttribute("disabled", true);
+            alert("Your answer is wrong");
+            // button.setAttribute("disabled", true);
+          }
+        });
+
+        answerC.addEventListener("click", () => {
+          if (answer3 == correctAnswer) {
+            alert("Your answer is correct");
+            answerC.className = "btn-success";
+            answerA.setAttribute("disabled", true);
+            answerB.setAttribute("disabled", true);
+            answerC.setAttribute("disabled", true);
+            // button.setAttribute("disabled", true);
+          } else {
+            answerC.className = "btn-danger";
+            answerA.setAttribute("disabled", true);
+            answerB.setAttribute("disabled", true);
+            answerC.setAttribute("disabled", true);
+            alert("Your answer is wrong");
+            // button.setAttribute("disabled", true);
+          }
+        });
       });
-  });
-}
+  };
 
-// fetching questions from json :
-
-function buildRandomQuiz() {}
-
-function showResults() {}
-
-// display quiz right away
-buildRandomQuiz();
-
-// on submit, show results
-// submitButton.addEventListener("click", showResults);
-
-// Step 1 Questions :
-
-// fetching questions from json :
-
-fetch("./questions.json")
-  .then((res) => res.json())
-  .then((data) => {
-    console.log(data);
-
-    console.log(Questions);
-    // Questions.push(data);
-    console.log(Questions);
-  });
-
-// Step 2 create functions:
-function buildQuiz() {
-  // variable to store the HTML output
-  const output = [];
+  button.addEventListener("click", showResults);
 }
