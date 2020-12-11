@@ -50,13 +50,13 @@ for (let i = 1; i <= 31; i++) {
             answerA.className = "btn-success";
             answerB.setAttribute("disabled", true);
             answerC.setAttribute("disabled", true);
-            button.setAttribute("disabled", true);
+            // button.setAttribute("disabled", true);
           } else {
             answerA.className = "btn-danger";
             answerB.setAttribute("disabled", true);
             answerC.setAttribute("disabled", true);
             alert("Your answer is wrong");
-            button.setAttribute("disabled", true);
+            // button.setAttribute("disabled", true);
           }
         });
 
@@ -66,13 +66,13 @@ for (let i = 1; i <= 31; i++) {
             answerB.className = "btn-success";
             answerA.setAttribute("disabled", true);
             answerC.setAttribute("disabled", true);
-            button.setAttribute("disabled", true);
+            // button.setAttribute("disabled", true);
           } else {
             answerB.className = "btn-danger";
             answerA.setAttribute("disabled", true);
             answerC.setAttribute("disabled", true);
             alert("Your answer is wrong");
-            button.setAttribute("disabled", true);
+            // button.setAttribute("disabled", true);
           }
         });
 
@@ -82,13 +82,13 @@ for (let i = 1; i <= 31; i++) {
             answerC.className = "btn-success";
             answerB.setAttribute("disabled", true);
             answerA.setAttribute("disabled", true);
-            button.setAttribute("disabled", true);
+            // button.setAttribute("disabled", true);
           } else {
             answerC.className = "btn-danger";
             answerB.setAttribute("disabled", true);
             answerA.setAttribute("disabled", true);
             alert("Your answer is wrong");
-            button.setAttribute("disabled", true);
+            // button.setAttribute("disabled", true);
           }
         });
       });
