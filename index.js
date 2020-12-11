@@ -1,16 +1,11 @@
 // select these HTML elements
+const numberContainer = document.getElementById("number-container");
 const quiz = document.getElementById("quiz");
-const submit = document.getElementById("submit");
 const answerA = document.getElementById("answerA");
 const answerB = document.getElementById("answerB");
 const answerC = document.getElementById("answerC");
-const results = document.getElementById("results");
-const numberContainer = document.getElementById("number-container");
 
 const Questions = [];
-let answer1 = "";
-let answer2 = "";
-let answer3 = "";
 
 // create Buttons days
 for (let i = 1; i <= 31; i++) {
@@ -21,9 +16,7 @@ for (let i = 1; i <= 31; i++) {
 
   //create Results handler
   showResults = () => {
-    // location.reload();
-    //redirect to new Page
-    // window.location = "./answers.html";
+    document.getElementById("content-page").style.display = "none"; // to hide all the elements page
 
     console.log("number" + i);
     const randomNumber = Math.round(Math.random() * 41);
@@ -53,31 +46,49 @@ for (let i = 1; i <= 31; i++) {
 
         answerA.addEventListener("click", () => {
           if (answer1 == correctAnswer) {
-            // alert("this correct");
+            alert("Your answer is correct");
             answerA.className = "btn-success";
+            answerB.setAttribute("disabled", true);
+            answerC.setAttribute("disabled", true);
+            button.setAttribute("disabled", true);
           } else {
             answerA.className = "btn-danger";
-            // alert("this wrong");
+            answerB.setAttribute("disabled", true);
+            answerC.setAttribute("disabled", true);
+            alert("Your answer is wrong");
+            button.setAttribute("disabled", true);
           }
         });
 
         answerB.addEventListener("click", () => {
           if (answer2 == correctAnswer) {
-            // alert("this correct");
+            alert("Your answer is correct");
             answerB.className = "btn-success";
+            answerA.setAttribute("disabled", true);
+            answerC.setAttribute("disabled", true);
+            button.setAttribute("disabled", true);
           } else {
             answerB.className = "btn-danger";
-            // alert("this wrong");
+            answerA.setAttribute("disabled", true);
+            answerC.setAttribute("disabled", true);
+            alert("Your answer is wrong");
+            button.setAttribute("disabled", true);
           }
         });
 
         answerC.addEventListener("click", () => {
           if (answer3 == correctAnswer) {
-            // alert("this correct");
+            alert("Your answer is correct");
             answerC.className = "btn-success";
+            answerB.setAttribute("disabled", true);
+            answerA.setAttribute("disabled", true);
+            button.setAttribute("disabled", true);
           } else {
             answerC.className = "btn-danger";
-            // alert("this wrong");
+            answerB.setAttribute("disabled", true);
+            answerA.setAttribute("disabled", true);
+            alert("Your answer is wrong");
+            button.setAttribute("disabled", true);
           }
         });
       });
