@@ -14,6 +14,16 @@ for (let i = 1; i <= 31; i++) {
   button.innerHTML = i;
   numberContainer.appendChild(button);
 
+
+  const date=new Date();
+  const currentDate=date.getDate();
+  console.log(currentDate+1)
+  
+if(currentDate !== i ){
+  button.setAttribute("disabled", true);  
+}
+
+
   //create Results handler
   showResults = () => {
     document.getElementById("content-page").style.display = "none"; // to hide all the elements page
