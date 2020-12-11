@@ -66,8 +66,8 @@
         "question": "When does the Boxing Day take place annually?",
         "answers": {
           "a": "On December 23rd",
-          "b": ". On December 26th",
-          "c": ". On December 27th"
+          "b": "On December 26th",
+          "c": "On December 27th"
         },
         "correctAnswer": ". On December 26th"
       },  {

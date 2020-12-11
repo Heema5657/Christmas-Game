@@ -8,6 +8,9 @@ const results = document.getElementById("results");
 const numberContainer = document.getElementById("number-container");
 
 const Questions = [];
+let answer1 = "";
+let answer2 = "";
+let answer3 = "";
 
 // create Buttons days
 for (let i = 1; i <= 31; i++) {
@@ -16,8 +19,9 @@ for (let i = 1; i <= 31; i++) {
   button.innerHTML = i;
   numberContainer.appendChild(button);
 
-  //create click handler
-  myClickFunction = () => {
+  //create Results handler
+  showResults = () => {
+    // location.reload();
     //redirect to new Page
     // window.location = "./answers.html";
 
@@ -28,36 +32,56 @@ for (let i = 1; i <= 31; i++) {
     fetch("./questions.json")
       .then((res) => res.json())
       .then((data) => {
+        Questions.splice(0, Questions.length); //remove all elements from the array and clean the original array.
         Questions.push(data);
         console.log(Questions);
         const question = Questions[0][randomNumber].question;
         quiz.innerHTML = question;
+        console.log(quiz);
 
         const answer1 = Questions[0][randomNumber].answers.a;
         const answer2 = Questions[0][randomNumber].answers.b;
         const answer3 = Questions[0][randomNumber].answers.c;
-        let buttonA = document.createElement("button");
-        let buttonB = document.createElement("button");
-        let buttonC = document.createElement("button");
-        buttonA.className = " btn btn-secondary";
-        buttonB.className = " btn btn-secondary";
-        buttonC.className = " btn btn-secondary";
 
-        buttonA.innerHTML = answer1;
-        buttonB.innerHTML = answer2;
-        buttonC.innerHTML = answer3;
+        const correctAnswer = Questions[0][randomNumber].correctAnswer;
+        console.log(correctAnswer);
 
-        // quiz.appendChild(quiz);
-        answerA.appendChild(buttonA);
-        answerB.appendChild(buttonB);
-        answerC.appendChild(buttonC);
+        answerA.innerHTML = answer1;
+        console.log(answerA);
+        answerB.innerHTML = answer2;
+        answerC.innerHTML = answer3;
 
-        let submitButton = document.createElement("submit");
-        submitButton.className = "btn btn-warning";
-        submitButton.innerText = "Submit";
-        submit.appendChild(submitButton);
+        answerA.addEventListener("click", () => {
+          if (answer1 == correctAnswer) {
+            // alert("this correct");
+            answerA.className = "btn-success";
+          } else {
+            answerA.className = "btn-danger";
+            // alert("this wrong");
+          }
+        });
+
+        answerB.addEventListener("click", () => {
+          if (answer2 == correctAnswer) {
+            // alert("this correct");
+            answerB.className = "btn-success";
+          } else {
+            answerB.className = "btn-danger";
+            // alert("this wrong");
+          }
+        });
+
+        answerC.addEventListener("click", () => {
+          if (answer3 == correctAnswer) {
+            // alert("this correct");
+            answerC.className = "btn-success";
+          } else {
+            answerC.className = "btn-danger";
+            // alert("this wrong");
+          }
+        });
       });
   };
 
-  button.addEventListener("click", myClickFunction);
+  button.addEventListener("click", showResults);
 }
