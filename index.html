@@ -15,28 +15,28 @@
 
     <title>New Year Game</title>
   </head>
-  <body>
+  <body style="background-image: url('christmas-background.jpg')">
     <div class="container">
       <div class="content-page">
         <div id="content-page">
           <header>
             <div class="container text-center">
-              <div class="row d-flex justify-content-center ">
+              <div class="row d-flex justify-content-center">
                 <img
-                  src="/christmas-tree.svg"
+                  src="christmas-tree.svg"
                   alt="christmas-tree"
                   width="40px"
                 />
                 <h1>Christmas Game</h1>
                 <img
-                  src="/christmas-tree.svg"
+                  src="christmas-tree.svg"
                   alt="christmas-tree"
                   width="40px"
                 />
               </div>
 
               <h4>How much do you know about Christmas ?</h4>
-              <h2 class="bg-secondary text-white">Just pick a Day</h2>
+              <h2 id="turns" class="bg-secondary text-white">You don't have any more turns today </h2>
             </div>
           </header>
 
@@ -52,7 +52,7 @@
         </div>
 
         <!-- Questions section -->
-        <section>
+        <section id="question">
           <div class="container">
             <div class="text-center">
               <div id="quiz" class="text-center"></div>
@@ -63,6 +63,7 @@
               </div>
             </div>
           </div>
+          <div id="goBack"></div>
         </section>
       </div>
     </div>
