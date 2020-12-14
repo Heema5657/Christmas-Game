@@ -38,8 +38,8 @@
       {
         "question": "Who wrote the novel “A Christmas Carol”?",
         "answers": {
-          "a": "Oscar Wilde",
-          "b": "Charles Dickens",
+          "a": "Charles Dickens",
+          "b": "Oscar Wilde",
           "c": "William Shakespeare"
         },
         "correctAnswer": "Charles Dickens"
@@ -129,7 +129,7 @@
         "answers": {
           "a": "Angels",
           "b": "Christian crosses",
-          "c": "Candy Canes"
+          "c": "Stars"
         },
         "correctAnswer": "Angels"
       },
@@ -271,9 +271,9 @@
       {
         "question": "Who wrote A Christmas Carol?",
         "answers": {
-          "a": "Douglas Jerrold",
+          "a": "Charles Dickens",
           "b": "Washington Irvin",
-          "c": "Charles DickensDouglas Jerrold"
+          "c": "Douglas Jerrold"
         },
         "correctAnswer": "Charles Dickens"
       },
@@ -298,8 +298,8 @@
       {
         "question": "Who was the star of the movie titled White Christmas?",
         "answers": {
-          "a": "Danny Kaye",
-          "b": "Bing Crosby",
+          "a": "Bing Crosby",
+          "b": "Danny Kaye",
           "c": "Rosemary Clooney"
         },
         "correctAnswer": "Bing Crosby"
@@ -307,9 +307,9 @@
       {
         "question": "Which Christmas food is it considered good luck to eat one of on each of the 12 days of Christmas?",
         "answers": {
-          "a": "Chicken",
+          "a": "Mince Pies",
           "b": "Turkey",
-          "c": "Mince Pies"
+          "c": "Chicken"
         },
         "correctAnswer": "Mince Pies"
       },
@@ -325,9 +325,9 @@
       {
         "question": "Where is the world’s largest nativity scene?",
         "answers": {
-          "a": "Helsinki",
-          "b": "Einsiedeln",
-          "c": "Norway"
+          "a": "Einsiedeln,",
+          "b": "Helsinki",
+          "c": " Norway"
         },
         "correctAnswer": "Einsiedeln,"
       },
@@ -343,9 +343,9 @@
       {
         "question": "What’s the most popular Christmas play featuring toys that come to life?",
         "answers": {
-          "a": "Rudolph",
-          "b": "Elf",
-          "c": "The Nutcracker"
+          "a": "The Nutcracker",
+          "b": "elf",
+          "c": "rudolph"
         },
         "correctAnswer": "The Nutcracker"
       },
@@ -361,8 +361,8 @@
       {
         "question": "Who helps Santa Claus in making his gifts?",
         "answers": {
-          "a": "Rudolph",
-          "b": "Elves and Mrs. Claus!",
+          "a": "Elves and Mrs. Claus!,",
+          "b": "Rudolph",
           "c": "Reindeer"
         },
         "correctAnswer": "Elves and Mrs. Claus!,"
@@ -370,9 +370,9 @@
       {
         "question": "Who once stole Christmas?",
         "answers": {
-          "a": "Reindeer",
+          "a": "The Grinch",
           "b": "Elf",
-          "c": "The Grinch"
+          "c": "Reindeer"
         },
         "correctAnswer": "The Grinch"
       }
