@@ -6,6 +6,8 @@
 
 body {
   position: relative;
+  background-position: center;
+
 }
 .body {
   height: 90vh;
